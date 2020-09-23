@@ -5,7 +5,8 @@
   },
   {
     "name": "Åland",
-    "iso2_code": "AX"
+    "iso2_code": "AX",
+    "exclude": true
   },
   {
     "name": "Albanië",
@@ -37,7 +38,8 @@
   },
   {
     "name": "Antarctica",
-    "iso2_code": "AQ"
+    "iso2_code": "AQ",
+    "exclude": true
   },
   {
     "name": "Antigua en Barbuda",
@@ -53,7 +55,8 @@
   },
   {
     "name": "Aruba",
-    "iso2_code": "AW"
+    "iso2_code": "AW",
+    "dutch_caribbean": true
   },
   {
     "name": "Australië",
@@ -93,7 +96,8 @@
   },
   {
     "name": "Bermuda",
-    "iso2_code": "BM"
+    "iso2_code": "BM",
+    "exclude": true
   },
   {
     "name": "Bhutan",
@@ -105,7 +109,8 @@
   },
   {
     "name": "Bonaire, Sint Eustatius en Saba",
-    "iso2_code": "BQ"
+    "iso2_code": "BQ",
+    "dutch_caribbean": true
   },
   {
     "name": "Bosnië en Herzegovina",
@@ -117,7 +122,8 @@
   },
   {
     "name": "Bouvet",
-    "iso2_code": "BV"
+    "iso2_code": "BV",
+    "exclude": true
   },
   {
     "name": "Brazilië",
@@ -129,10 +135,12 @@
   },
   {
     "name": "Brits Indische Oceaanterritorium",
-    "iso2_code": "IO"
+    "iso2_code": "IO",
+    "exclude": true
   },
   {
     "name": "Brunei",
+    "slug": "brunei-darussalam",
     "iso2_code": "BN"
   },
   {
@@ -169,11 +177,13 @@
   },
   {
     "name": "Christmaseiland",
-    "iso2_code": "CX"
+    "iso2_code": "CX",
+    "exclude": true
   },
   {
     "name": "Cocoseilanden",
-    "iso2_code": "CC"
+    "iso2_code": "CC",
+    "exclude": true
   },
   {
     "name": "Colombia",
@@ -185,11 +195,13 @@
   },
   {
     "name": "Congo-Brazzaville",
-    "iso2_code": "CG"
+    "iso2_code": "CG",
+    "slug": "congo-de-republiek"
   },
   {
     "name": "Congo-Kinshasa",
-    "iso2_code": "CD"
+    "iso2_code": "CD",
+    "slug": "congo-democratische-republiek"
   },
   {
     "name": "Cookeilanden",
@@ -205,7 +217,9 @@
   },
   {
     "name": "Curaçao",
-    "iso2_code": "CW"
+    "iso2_code": "CW",
+    "slug": "curac%CC%A7ao",
+    "dutch_caribbean": true
   },
   {
     "name": "Cyprus",
@@ -265,7 +279,8 @@
   },
   {
     "name": "Falklandeilanden",
-    "iso2_code": "FK"
+    "iso2_code": "FK",
+    "exclude": true
   },
   {
     "name": "Fiji",
@@ -285,7 +300,8 @@
   },
   {
     "name": "Franse Zuidelijke en Antarctische Gebiede",
-    "iso2_code": "TF"
+    "iso2_code": "TF",
+    "exclude": true
   },
   {
     "name": "Frans-Guyana",
@@ -313,7 +329,8 @@
   },
   {
     "name": "Gibraltar",
-    "iso2_code": "GI"
+    "iso2_code": "GI",
+    "exclude": true
   },
   {
     "name": "Grenada",
@@ -333,7 +350,8 @@
   },
   {
     "name": "Guam",
-    "iso2_code": "GU"
+    "iso2_code": "GU",
+    "exclude": true
   },
   {
     "name": "Guatemala",
@@ -341,7 +359,8 @@
   },
   {
     "name": "Guernsey",
-    "iso2_code": "GG"
+    "iso2_code": "GG",
+    "exclude": true
   },
   {
     "name": "Guinee",
@@ -361,7 +380,8 @@
   },
   {
     "name": "Heard en McDonaldeilanden",
-    "iso2_code": "HM"
+    "iso2_code": "HM",
+    "exclude": true
   },
   {
     "name": "Honduras",
@@ -425,7 +445,8 @@
   },
   {
     "name": "Jersey",
-    "iso2_code": "JE"
+    "iso2_code": "JE",
+    "exclude": true
   },
   {
     "name": "Jordanië",
@@ -461,7 +482,8 @@
   },
   {
     "name": "Kleine afgelegen eilanden van de Verenigde Staten",
-    "iso2_code": "UM"
+    "iso2_code": "UM",
+    "exclude": true
   },
   {
     "name": "Koeweit",
@@ -513,10 +535,11 @@
   },
   {
     "name": "Macau",
-    "iso2_code": "MO"
+    "iso2_code": "MO",
+    "slug": "macau-sar"
   },
   {
-    "name": "Macedonië",
+    "name": "Noord-Macedonië",
     "iso2_code": "MK"
   },
   {
@@ -545,7 +568,8 @@
   },
   {
     "name": "Man",
-    "iso2_code": "IM"
+    "iso2_code": "IM",
+    "exclude": true
   },
   {
     "name": "Marokko",
@@ -569,7 +593,8 @@
   },
   {
     "name": "Mayotte",
-    "iso2_code": "YT"
+    "iso2_code": "YT",
+    "exclude": true
   },
   {
     "name": "Mexico",
@@ -617,7 +642,8 @@
   },
   {
     "name": "Nederland",
-    "iso2_code": "NL"
+    "iso2_code": "NL",
+    "exclude": true
   },
   {
     "name": "Nepal",
@@ -649,7 +675,8 @@
   },
   {
     "name": "Noordelijke Marianen",
-    "iso2_code": "MP"
+    "iso2_code": "MP",
+    "exclude": true
   },
   {
     "name": "Noord-Korea",
@@ -661,11 +688,13 @@
   },
   {
     "name": "Norfolk",
-    "iso2_code": "NF"
+    "iso2_code": "NF",
+    "exclude": true
   },
   {
     "name": "Oeganda",
-    "iso2_code": "UG"
+    "iso2_code": "UG",
+    "exclude": true
   },
   {
     "name": "Oekraïne",
@@ -696,7 +725,7 @@
     "iso2_code": "PW"
   },
   {
-    "name": "Palestina",
+    "name": "Palestijnse Gebieden",
     "iso2_code": "PS"
   },
   {
@@ -704,7 +733,7 @@
     "iso2_code": "PA"
   },
   {
-    "name": "Papua-Nieuw-Guinea",
+    "name": "Papoea-Nieuw-Guinea",
     "iso2_code": "PG"
   },
   {
@@ -753,7 +782,8 @@
   },
   {
     "name": "Saint-Barthélemy",
-    "iso2_code": "BL"
+    "iso2_code": "BL",
+    "exclude": true
   },
   {
     "name": "Saint Kitts en Nevis",
@@ -765,7 +795,8 @@
   },
   {
     "name": "Saint-Pierre en Miquelon",
-    "iso2_code": "PM"
+    "iso2_code": "PM",
+    "exclude": true
   },
   {
     "name": "Saint Vincent en de Grenadines",
@@ -813,15 +844,20 @@
   },
   {
     "name": "Sint-Helena, Ascension en Tristan da Cunha",
-    "iso2_code": "SH"
+    "iso2_code": "SH",
+    "exclude": true
   },
   {
     "name": "Sint-Maarten",
-    "iso2_code": "MF"
+    "iso2_code": "MF",
+    "slug": "sint20maarten",
+    "dutch_caribbean": true
   },
   {
     "name": "Sint Maarten",
-    "iso2_code": "SX"
+    "iso2_code": "SX",
+    "slug": "sint20maarten",
+    "dutch_caribbean": true
   },
   {
     "name": "Slovenië",
@@ -833,7 +869,8 @@
   },
   {
     "name": "Soedan",
-    "iso2_code": "SD"
+    "iso2_code": "SD",
+    "exclude": true
   },
   {
     "name": "Somalië",
@@ -845,7 +882,8 @@
   },
   {
     "name": "Spitsbergen en Jan Mayen",
-    "iso2_code": "SJ"
+    "iso2_code": "SJ",
+    "exclude": true
   },
   {
     "name": "Sri Lanka",
@@ -857,7 +895,8 @@
   },
   {
     "name": "Swaziland",
-    "iso2_code": "SZ"
+    "iso2_code": "SZ",
+    "exclude": true
   },
   {
     "name": "Syrië",
@@ -884,7 +923,7 @@
     "iso2_code": "TG"
   },
   {
-    "name": "Tokelau",
+    "name": "Tokelau-eilanden",
     "iso2_code": "TK"
   },
   {
@@ -933,6 +972,7 @@
   },
   {
     "name": "Vaticaanstad",
+    "slug": "heilige-stoel",
     "iso2_code": "VA"
   },
   {
@@ -945,6 +985,7 @@
   },
   {
     "name": "Verenigde Staten",
+    "slug": "verenigde-staten-van-amerika",
     "iso2_code": "US"
   },
   {
@@ -961,10 +1002,11 @@
   },
   {
     "name": "Westelijke Sahara",
-    "iso2_code": "EH"
+    "iso2_code": "EH",
+    "exclude": true
   },
   {
-    "name": "Wit-Rusland",
+    "name": "Belarus (Wit-Rusland)",
     "iso2_code": "BY"
   },
   {
@@ -981,7 +1023,8 @@
   },
   {
     "name": "Zuid-Georgia en de Zuidelijke Sandwicheilanden",
-    "iso2_code": "GS"
+    "iso2_code": "GS",
+    "exclude": true
   },
   {
     "name": "Zuid-Korea",
@@ -989,7 +1032,8 @@
   },
   {
     "name": "Zuid-Soedan",
-    "iso2_code": "SS"
+    "iso2_code": "SS",
+    "exclude": true
   },
   {
     "name": "Zweden",

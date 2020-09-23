@@ -2,6 +2,7 @@
     "name": "hansschouten/coronareischeck.nl",
     "require": {
         "illuminate/support": "^8.6",
-        "ext-json": "*"
+        "ext-json": "*",
+        "league/color-extractor": "^0.3.2"
     }
 }
