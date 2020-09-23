@@ -1,0 +1,1002 @@
+[
+  {
+    "name": "Afghanistan",
+    "iso2_code": "AF"
+  },
+  {
+    "name": "Åland",
+    "iso2_code": "AX"
+  },
+  {
+    "name": "Albanië",
+    "iso2_code": "AL"
+  },
+  {
+    "name": "Algerije",
+    "iso2_code": "DZ"
+  },
+  {
+    "name": "Amerikaanse Maagdeneilanden",
+    "iso2_code": "VI"
+  },
+  {
+    "name": "Amerikaans-Samoa",
+    "iso2_code": "AS"
+  },
+  {
+    "name": "Andorra",
+    "iso2_code": "AD"
+  },
+  {
+    "name": "Angola",
+    "iso2_code": "AO"
+  },
+  {
+    "name": "Anguilla",
+    "iso2_code": "AI"
+  },
+  {
+    "name": "Antarctica",
+    "iso2_code": "AQ"
+  },
+  {
+    "name": "Antigua en Barbuda",
+    "iso2_code": "AG"
+  },
+  {
+    "name": "Argentinië",
+    "iso2_code": "AR"
+  },
+  {
+    "name": "Armenië",
+    "iso2_code": "AM"
+  },
+  {
+    "name": "Aruba",
+    "iso2_code": "AW"
+  },
+  {
+    "name": "Australië",
+    "iso2_code": "AU"
+  },
+  {
+    "name": "Azerbeidzjan",
+    "iso2_code": "AZ"
+  },
+  {
+    "name": "Bahama's",
+    "iso2_code": "BS"
+  },
+  {
+    "name": "Bahrein",
+    "iso2_code": "BH"
+  },
+  {
+    "name": "Bangladesh",
+    "iso2_code": "BD"
+  },
+  {
+    "name": "Barbados",
+    "iso2_code": "BB"
+  },
+  {
+    "name": "België",
+    "iso2_code": "BE"
+  },
+  {
+    "name": "Belize",
+    "iso2_code": "BZ"
+  },
+  {
+    "name": "Benin",
+    "iso2_code": "BJ"
+  },
+  {
+    "name": "Bermuda",
+    "iso2_code": "BM"
+  },
+  {
+    "name": "Bhutan",
+    "iso2_code": "BT"
+  },
+  {
+    "name": "Bolivia",
+    "iso2_code": "BO"
+  },
+  {
+    "name": "Bonaire, Sint Eustatius en Saba",
+    "iso2_code": "BQ"
+  },
+  {
+    "name": "Bosnië en Herzegovina",
+    "iso2_code": "BA"
+  },
+  {
+    "name": "Botswana",
+    "iso2_code": "BW"
+  },
+  {
+    "name": "Bouvet",
+    "iso2_code": "BV"
+  },
+  {
+    "name": "Brazilië",
+    "iso2_code": "BR"
+  },
+  {
+    "name": "Britse Maagdeneilanden",
+    "iso2_code": "VG"
+  },
+  {
+    "name": "Brits Indische Oceaanterritorium",
+    "iso2_code": "IO"
+  },
+  {
+    "name": "Brunei",
+    "iso2_code": "BN"
+  },
+  {
+    "name": "Bulgarije",
+    "iso2_code": "BG"
+  },
+  {
+    "name": "Burkina Faso",
+    "iso2_code": "BF"
+  },
+  {
+    "name": "Burundi",
+    "iso2_code": "BI"
+  },
+  {
+    "name": "Cambodja",
+    "iso2_code": "KH"
+  },
+  {
+    "name": "Canada",
+    "iso2_code": "CA"
+  },
+  {
+    "name": "Centraal-Afrikaanse Republiek",
+    "iso2_code": "CF"
+  },
+  {
+    "name": "Chili",
+    "iso2_code": "CL"
+  },
+  {
+    "name": "China",
+    "iso2_code": "CN"
+  },
+  {
+    "name": "Christmaseiland",
+    "iso2_code": "CX"
+  },
+  {
+    "name": "Cocoseilanden",
+    "iso2_code": "CC"
+  },
+  {
+    "name": "Colombia",
+    "iso2_code": "CO"
+  },
+  {
+    "name": "Comoren",
+    "iso2_code": "KM"
+  },
+  {
+    "name": "Congo-Brazzaville",
+    "iso2_code": "CG"
+  },
+  {
+    "name": "Congo-Kinshasa",
+    "iso2_code": "CD"
+  },
+  {
+    "name": "Cookeilanden",
+    "iso2_code": "CK"
+  },
+  {
+    "name": "Costa Rica",
+    "iso2_code": "CR"
+  },
+  {
+    "name": "Cuba",
+    "iso2_code": "CU"
+  },
+  {
+    "name": "Curaçao",
+    "iso2_code": "CW"
+  },
+  {
+    "name": "Cyprus",
+    "iso2_code": "CY"
+  },
+  {
+    "name": "Denemarken",
+    "iso2_code": "DK"
+  },
+  {
+    "name": "Djibouti",
+    "iso2_code": "DJ"
+  },
+  {
+    "name": "Dominica",
+    "iso2_code": "DM"
+  },
+  {
+    "name": "Dominicaanse Republiek",
+    "iso2_code": "DO"
+  },
+  {
+    "name": "Duitsland",
+    "iso2_code": "DE"
+  },
+  {
+    "name": "Ecuador",
+    "iso2_code": "EC"
+  },
+  {
+    "name": "Egypte",
+    "iso2_code": "EG"
+  },
+  {
+    "name": "El Salvador",
+    "iso2_code": "SV"
+  },
+  {
+    "name": "Equatoriaal-Guinea",
+    "iso2_code": "GQ"
+  },
+  {
+    "name": "Eritrea",
+    "iso2_code": "ER"
+  },
+  {
+    "name": "Estland",
+    "iso2_code": "EE"
+  },
+  {
+    "name": "Ethiopië",
+    "iso2_code": "ET"
+  },
+  {
+    "name": "Faeröer",
+    "iso2_code": "FO"
+  },
+  {
+    "name": "Falklandeilanden",
+    "iso2_code": "FK"
+  },
+  {
+    "name": "Fiji",
+    "iso2_code": "FJ"
+  },
+  {
+    "name": "Filipijnen",
+    "iso2_code": "PH"
+  },
+  {
+    "name": "Finland",
+    "iso2_code": "FI"
+  },
+  {
+    "name": "Frankrijk",
+    "iso2_code": "FR"
+  },
+  {
+    "name": "Franse Zuidelijke en Antarctische Gebiede",
+    "iso2_code": "TF"
+  },
+  {
+    "name": "Frans-Guyana",
+    "iso2_code": "GF"
+  },
+  {
+    "name": "Frans-Polynesië",
+    "iso2_code": "PF"
+  },
+  {
+    "name": "Gabon",
+    "iso2_code": "GA"
+  },
+  {
+    "name": "Gambia",
+    "iso2_code": "GM"
+  },
+  {
+    "name": "Georgië",
+    "iso2_code": "GE"
+  },
+  {
+    "name": "Ghana",
+    "iso2_code": "GH"
+  },
+  {
+    "name": "Gibraltar",
+    "iso2_code": "GI"
+  },
+  {
+    "name": "Grenada",
+    "iso2_code": "GD"
+  },
+  {
+    "name": "Griekenland",
+    "iso2_code": "GR"
+  },
+  {
+    "name": "Groenland",
+    "iso2_code": "GL"
+  },
+  {
+    "name": "Guadeloupe",
+    "iso2_code": "GP"
+  },
+  {
+    "name": "Guam",
+    "iso2_code": "GU"
+  },
+  {
+    "name": "Guatemala",
+    "iso2_code": "GT"
+  },
+  {
+    "name": "Guernsey",
+    "iso2_code": "GG"
+  },
+  {
+    "name": "Guinee",
+    "iso2_code": "GN"
+  },
+  {
+    "name": "Guinee-Bissau",
+    "iso2_code": "GW"
+  },
+  {
+    "name": "Guyana",
+    "iso2_code": "GY"
+  },
+  {
+    "name": "Haïti",
+    "iso2_code": "HT"
+  },
+  {
+    "name": "Heard en McDonaldeilanden",
+    "iso2_code": "HM"
+  },
+  {
+    "name": "Honduras",
+    "iso2_code": "HN"
+  },
+  {
+    "name": "Hongarije",
+    "iso2_code": "HU"
+  },
+  {
+    "name": "Hongkong",
+    "iso2_code": "HK"
+  },
+  {
+    "name": "Ierland",
+    "iso2_code": "IE"
+  },
+  {
+    "name": "IJsland",
+    "iso2_code": "IS"
+  },
+  {
+    "name": "India",
+    "iso2_code": "IN"
+  },
+  {
+    "name": "Indonesië",
+    "iso2_code": "ID"
+  },
+  {
+    "name": "Irak",
+    "iso2_code": "IQ"
+  },
+  {
+    "name": "Iran",
+    "iso2_code": "IR"
+  },
+  {
+    "name": "Israël",
+    "iso2_code": "IL"
+  },
+  {
+    "name": "Italië",
+    "iso2_code": "IT"
+  },
+  {
+    "name": "Ivoorkust",
+    "iso2_code": "CI"
+  },
+  {
+    "name": "Jamaica",
+    "iso2_code": "JM"
+  },
+  {
+    "name": "Japan",
+    "iso2_code": "JP"
+  },
+  {
+    "name": "Jemen",
+    "iso2_code": "YE"
+  },
+  {
+    "name": "Jersey",
+    "iso2_code": "JE"
+  },
+  {
+    "name": "Jordanië",
+    "iso2_code": "JO"
+  },
+  {
+    "name": "Kaaimaneilanden",
+    "iso2_code": "KY"
+  },
+  {
+    "name": "Kaapverdië",
+    "iso2_code": "CV"
+  },
+  {
+    "name": "Kameroen",
+    "iso2_code": "CM"
+  },
+  {
+    "name": "Kazachstan",
+    "iso2_code": "KZ"
+  },
+  {
+    "name": "Kenia",
+    "iso2_code": "KE"
+  },
+  {
+    "name": "Kirgizië",
+    "iso2_code": "KG"
+  },
+  {
+    "name": "Kiribati",
+    "iso2_code": "KI"
+  },
+  {
+    "name": "Kleine afgelegen eilanden van de Verenigde Staten",
+    "iso2_code": "UM"
+  },
+  {
+    "name": "Koeweit",
+    "iso2_code": "KW"
+  },
+  {
+    "name": "Kosovo",
+    "iso2_code": "XK"
+  },
+  {
+    "name": "Kroatië",
+    "iso2_code": "HR"
+  },
+  {
+    "name": "Laos",
+    "iso2_code": "LA"
+  },
+  {
+    "name": "Lesotho",
+    "iso2_code": "LS"
+  },
+  {
+    "name": "Letland",
+    "iso2_code": "LV"
+  },
+  {
+    "name": "Libanon",
+    "iso2_code": "LB"
+  },
+  {
+    "name": "Liberia",
+    "iso2_code": "LR"
+  },
+  {
+    "name": "Libië",
+    "iso2_code": "LY"
+  },
+  {
+    "name": "Liechtenstein",
+    "iso2_code": "LI"
+  },
+  {
+    "name": "Litouwen",
+    "iso2_code": "LT"
+  },
+  {
+    "name": "Luxemburg",
+    "iso2_code": "LU"
+  },
+  {
+    "name": "Macau",
+    "iso2_code": "MO"
+  },
+  {
+    "name": "Macedonië",
+    "iso2_code": "MK"
+  },
+  {
+    "name": "Madagaskar",
+    "iso2_code": "MG"
+  },
+  {
+    "name": "Malawi",
+    "iso2_code": "MW"
+  },
+  {
+    "name": "Maldiven",
+    "iso2_code": "MV"
+  },
+  {
+    "name": "Maleisië",
+    "iso2_code": "MY"
+  },
+  {
+    "name": "Mali",
+    "iso2_code": "ML"
+  },
+  {
+    "name": "Malta",
+    "iso2_code": "MT"
+  },
+  {
+    "name": "Man",
+    "iso2_code": "IM"
+  },
+  {
+    "name": "Marokko",
+    "iso2_code": "MA"
+  },
+  {
+    "name": "Marshalleilanden",
+    "iso2_code": "MH"
+  },
+  {
+    "name": "Martinique",
+    "iso2_code": "MQ"
+  },
+  {
+    "name": "Mauritanië",
+    "iso2_code": "MR"
+  },
+  {
+    "name": "Mauritius",
+    "iso2_code": "MU"
+  },
+  {
+    "name": "Mayotte",
+    "iso2_code": "YT"
+  },
+  {
+    "name": "Mexico",
+    "iso2_code": "MX"
+  },
+  {
+    "name": "Micronesia",
+    "iso2_code": "FM"
+  },
+  {
+    "name": "Moldavië",
+    "iso2_code": "MD"
+  },
+  {
+    "name": "Monaco",
+    "iso2_code": "MC"
+  },
+  {
+    "name": "Mongolië",
+    "iso2_code": "MN"
+  },
+  {
+    "name": "Montenegro",
+    "iso2_code": "ME"
+  },
+  {
+    "name": "Montserrat",
+    "iso2_code": "MS"
+  },
+  {
+    "name": "Mozambique",
+    "iso2_code": "MZ"
+  },
+  {
+    "name": "Myanmar",
+    "iso2_code": "MM"
+  },
+  {
+    "name": "Namibië",
+    "iso2_code": "NA"
+  },
+  {
+    "name": "Nauru",
+    "iso2_code": "NR"
+  },
+  {
+    "name": "Nederland",
+    "iso2_code": "NL"
+  },
+  {
+    "name": "Nepal",
+    "iso2_code": "NP"
+  },
+  {
+    "name": "Nicaragua",
+    "iso2_code": "NI"
+  },
+  {
+    "name": "Nieuw-Caledonië",
+    "iso2_code": "NC"
+  },
+  {
+    "name": "Nieuw-Zeeland",
+    "iso2_code": "NZ"
+  },
+  {
+    "name": "Niger",
+    "iso2_code": "NE"
+  },
+  {
+    "name": "Nigeria",
+    "iso2_code": "NG"
+  },
+  {
+    "name": "Niue",
+    "iso2_code": "NU"
+  },
+  {
+    "name": "Noordelijke Marianen",
+    "iso2_code": "MP"
+  },
+  {
+    "name": "Noord-Korea",
+    "iso2_code": "KP"
+  },
+  {
+    "name": "Noorwegen",
+    "iso2_code": "NO"
+  },
+  {
+    "name": "Norfolk",
+    "iso2_code": "NF"
+  },
+  {
+    "name": "Oeganda",
+    "iso2_code": "UG"
+  },
+  {
+    "name": "Oekraïne",
+    "iso2_code": "UA"
+  },
+  {
+    "name": "Oezbekistan",
+    "iso2_code": "UZ"
+  },
+  {
+    "name": "Oman",
+    "iso2_code": "OM"
+  },
+  {
+    "name": "Oostenrijk",
+    "iso2_code": "AT"
+  },
+  {
+    "name": "Oost-Timor",
+    "iso2_code": "TL"
+  },
+  {
+    "name": "Pakistan",
+    "iso2_code": "PK"
+  },
+  {
+    "name": "Palau",
+    "iso2_code": "PW"
+  },
+  {
+    "name": "Palestina",
+    "iso2_code": "PS"
+  },
+  {
+    "name": "Panama",
+    "iso2_code": "PA"
+  },
+  {
+    "name": "Papua-Nieuw-Guinea",
+    "iso2_code": "PG"
+  },
+  {
+    "name": "Paraguay",
+    "iso2_code": "PY"
+  },
+  {
+    "name": "Peru",
+    "iso2_code": "PE"
+  },
+  {
+    "name": "Pitcairneilanden",
+    "iso2_code": "PN"
+  },
+  {
+    "name": "Polen",
+    "iso2_code": "PL"
+  },
+  {
+    "name": "Portugal",
+    "iso2_code": "PT"
+  },
+  {
+    "name": "Puerto Rico",
+    "iso2_code": "PR"
+  },
+  {
+    "name": "Qatar",
+    "iso2_code": "QA"
+  },
+  {
+    "name": "Réunion",
+    "iso2_code": "RE"
+  },
+  {
+    "name": "Roemenië",
+    "iso2_code": "RO"
+  },
+  {
+    "name": "Rusland",
+    "iso2_code": "RU"
+  },
+  {
+    "name": "Rwanda",
+    "iso2_code": "RW"
+  },
+  {
+    "name": "Saint-Barthélemy",
+    "iso2_code": "BL"
+  },
+  {
+    "name": "Saint Kitts en Nevis",
+    "iso2_code": "KN"
+  },
+  {
+    "name": "Saint Lucia",
+    "iso2_code": "LC"
+  },
+  {
+    "name": "Saint-Pierre en Miquelon",
+    "iso2_code": "PM"
+  },
+  {
+    "name": "Saint Vincent en de Grenadines",
+    "iso2_code": "VC"
+  },
+  {
+    "name": "Salomonseilanden",
+    "iso2_code": "SB"
+  },
+  {
+    "name": "Samoa",
+    "iso2_code": "WS"
+  },
+  {
+    "name": "San Marino",
+    "iso2_code": "SM"
+  },
+  {
+    "name": "Saoedi-Arabië",
+    "iso2_code": "SA"
+  },
+  {
+    "name": "Sao Tomé en Principe",
+    "iso2_code": "ST"
+  },
+  {
+    "name": "Senegal",
+    "iso2_code": "SN"
+  },
+  {
+    "name": "Servië",
+    "iso2_code": "RS"
+  },
+  {
+    "name": "Seychellen",
+    "iso2_code": "SC"
+  },
+  {
+    "name": "Sierra Leone",
+    "iso2_code": "SL"
+  },
+  {
+    "name": "Singapore",
+    "iso2_code": "SG"
+  },
+  {
+    "name": "Sint-Helena, Ascension en Tristan da Cunha",
+    "iso2_code": "SH"
+  },
+  {
+    "name": "Sint-Maarten",
+    "iso2_code": "MF"
+  },
+  {
+    "name": "Sint Maarten",
+    "iso2_code": "SX"
+  },
+  {
+    "name": "Slovenië",
+    "iso2_code": "SI"
+  },
+  {
+    "name": "Slowakije",
+    "iso2_code": "SK"
+  },
+  {
+    "name": "Soedan",
+    "iso2_code": "SD"
+  },
+  {
+    "name": "Somalië",
+    "iso2_code": "SO"
+  },
+  {
+    "name": "Spanje",
+    "iso2_code": "ES"
+  },
+  {
+    "name": "Spitsbergen en Jan Mayen",
+    "iso2_code": "SJ"
+  },
+  {
+    "name": "Sri Lanka",
+    "iso2_code": "LK"
+  },
+  {
+    "name": "Suriname",
+    "iso2_code": "SR"
+  },
+  {
+    "name": "Swaziland",
+    "iso2_code": "SZ"
+  },
+  {
+    "name": "Syrië",
+    "iso2_code": "SY"
+  },
+  {
+    "name": "Tadzjikistan",
+    "iso2_code": "TJ"
+  },
+  {
+    "name": "Taiwan",
+    "iso2_code": "TW"
+  },
+  {
+    "name": "Tanzania",
+    "iso2_code": "TZ"
+  },
+  {
+    "name": "Thailand",
+    "iso2_code": "TH"
+  },
+  {
+    "name": "Togo",
+    "iso2_code": "TG"
+  },
+  {
+    "name": "Tokelau",
+    "iso2_code": "TK"
+  },
+  {
+    "name": "Tonga",
+    "iso2_code": "TO"
+  },
+  {
+    "name": "Trinidad en Tobago",
+    "iso2_code": "TT"
+  },
+  {
+    "name": "Tsjaad",
+    "iso2_code": "TD"
+  },
+  {
+    "name": "Tsjechië",
+    "iso2_code": "CZ"
+  },
+  {
+    "name": "Tunesië",
+    "iso2_code": "TN"
+  },
+  {
+    "name": "Turkije",
+    "iso2_code": "TR"
+  },
+  {
+    "name": "Turkmenistan",
+    "iso2_code": "TM"
+  },
+  {
+    "name": "Turks- en Caicoseilanden",
+    "iso2_code": "TC"
+  },
+  {
+    "name": "Tuvalu",
+    "iso2_code": "TV"
+  },
+  {
+    "name": "Uruguay",
+    "iso2_code": "UY"
+  },
+  {
+    "name": "Vanuatu",
+    "iso2_code": "VU"
+  },
+  {
+    "name": "Vaticaanstad",
+    "iso2_code": "VA"
+  },
+  {
+    "name": "Venezuela",
+    "iso2_code": "VE"
+  },
+  {
+    "name": "Verenigde Arabische Emiraten",
+    "iso2_code": "AE"
+  },
+  {
+    "name": "Verenigde Staten",
+    "iso2_code": "US"
+  },
+  {
+    "name": "Verenigd Koninkrijk",
+    "iso2_code": "GB"
+  },
+  {
+    "name": "Vietnam",
+    "iso2_code": "VN"
+  },
+  {
+    "name": "Wallis en Futuna",
+    "iso2_code": "WF"
+  },
+  {
+    "name": "Westelijke Sahara",
+    "iso2_code": "EH"
+  },
+  {
+    "name": "Wit-Rusland",
+    "iso2_code": "BY"
+  },
+  {
+    "name": "Zambia",
+    "iso2_code": "ZM"
+  },
+  {
+    "name": "Zimbabwe",
+    "iso2_code": "ZW"
+  },
+  {
+    "name": "Zuid-Afrika",
+    "iso2_code": "ZA"
+  },
+  {
+    "name": "Zuid-Georgia en de Zuidelijke Sandwicheilanden",
+    "iso2_code": "GS"
+  },
+  {
+    "name": "Zuid-Korea",
+    "iso2_code": "KR"
+  },
+  {
+    "name": "Zuid-Soedan",
+    "iso2_code": "SS"
+  },
+  {
+    "name": "Zweden",
+    "iso2_code": "SE"
+  },
+  {
+    "name": "Zwitserland",
+    "iso2_code": "CH"
+  }
+]

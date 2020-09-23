@@ -1,0 +1,7 @@
+{
+    "name": "hansschouten/coronareischeck.nl",
+    "require": {
+        "illuminate/support": "^8.6",
+        "ext-json": "*"
+    }
+}
