@@ -4,6 +4,8 @@ use Illuminate\Support\Str;
 require_once __DIR__ . '/../core.php';
 require_once __DIR__ . '/functions.php';
 
+ini_set('max_execution_time', 600);
+
 $countryList = json_decode(file_get_contents(__DIR__ . '/countries.json'), true);
 
 $dataPerCountry = [];
