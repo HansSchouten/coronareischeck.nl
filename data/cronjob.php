@@ -9,9 +9,6 @@ ini_set('max_execution_time', 600);
 $countryList = json_decode(file_get_contents(__DIR__ . '/countries.json'), true);
 
 $dataPerCountry = [];
-if (file_exists(__DIR__ . '/downloads/latest.json')) {
-    $dataPerCountry = json_decode(file_get_contents(__DIR__ . '/downloads/latest.json'), true);
-}
 
 foreach ($countryList as $country) {
     if (isset($country['exclude']) || isset($dataPerCountry[$country['iso2_code']])) {
@@ -35,8 +32,9 @@ foreach ($countryList as $country) {
     }
 
     $dataPerCountry[$country['iso2_code']] = $countryData;
-    file_put_contents(__DIR__ . '/downloads/latest.json', json_encode($dataPerCountry));
 
     // give the remote server some time to relax and enjoy this beautiful day
     sleep(0.5);
 }
+
+file_put_contents(__DIR__ . '/downloads/latest.json', json_encode($dataPerCountry));

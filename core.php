@@ -8,4 +8,5 @@ if ($config['debug_mode']) {
     ini_set('display_errors', 1);
 }
 
-setlocale(LC_ALL, 'nl_NL');
+setlocale(LC_TIME, 'nl_NL');
+\Carbon\Carbon::setLocale('nl');

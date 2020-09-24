@@ -1,37 +1,10 @@
 <?php
+use Carbon\Carbon;
+
 require_once __DIR__ . '/../core.php';
-//require_once __DIR__ . '/../data/cron.php';
 
 $advicePerCountry = json_decode(file_get_contents(__DIR__ . '/../data/downloads/latest.json'), true);
-
-function getAdviceValue($countryData): int
-{
-    if ($countryData['code_red']) {
-        return 4;
-    } elseif ($countryData['code_orange']) {
-        return 3;
-    } elseif ($countryData['code_yellow']) {
-        return 2;
-    } elseif ($countryData['code_green']) {
-        return 1;
-    }
-    return 0;
-}
-function getAdviceText($countryData): string
-{
-    $codes = [];
-    if ($countryData['code_red']) {
-        $codes[] = 'Rood';
-    } elseif ($countryData['code_orange']) {
-        $codes[] = 'Oranje';
-    } elseif ($countryData['code_yellow']) {
-        $codes[] = 'Geel';
-    } elseif ($countryData['code_green']) {
-        $codes[] = 'Groen';
-    }
-
-    return 'Code: ' . implode(',', $codes) . "<br><small>Klik voor meer informatie</small>";
-}
+$lastUpdatedAt = Carbon::parse(filemtime(__DIR__ . '/../data/downloads/latest.json'));
 ?>
 <!DOCTYPE html>
 <html lang="nl">
@@ -99,7 +72,7 @@ function getAdviceText($countryData): string
 
         <div id='visualization'></div>
 
-        <h2>Bron: <a href="https://www.nederlandwereldwijd.nl" target="_blank">Nederland Wereldwijd</a>, laatst bijgewerkt: 2 uur terug</h2>
+        <h2>Bron: <a href="https://www.nederlandwereldwijd.nl" target="_blank">Nederland Wereldwijd</a>, laatst bijgewerkt: <?= $lastUpdatedAt->diffForHumans() ?></h2>
     </div>
 
     <a class="bottom-left" href="https://falcotravel.com" target="_blank">
