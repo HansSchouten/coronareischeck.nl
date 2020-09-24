@@ -41,13 +41,13 @@ $lastUpdatedAt = Carbon::parse(filemtime(__DIR__ . '/../data/downloads/latest.js
             text-align: center;
         }
 
-        #visualization {
-            width: 1200px;
+        #map-canvas {
+            width: 100%;
             margin: 0 auto;
             margin-top: 25px;
             margin-bottom: 25px;
         }
-        #visualization small {
+        #map-canvas small {
             white-space: nowrap;
         }
 
@@ -70,7 +70,7 @@ $lastUpdatedAt = Carbon::parse(filemtime(__DIR__ . '/../data/downloads/latest.js
             <button data-region="world" class="btn btn-sm btn-secondary">Wereldwijd</button>
         </div>
 
-        <div id='visualization'></div>
+        <div id="map-canvas"></div>
 
         <h2>Bron: <a href="https://www.nederlandwereldwijd.nl" target="_blank">Nederland Wereldwijd</a>, laatst bijgewerkt: <?= $lastUpdatedAt->diffForHumans() ?></h2>
     </div>
@@ -119,20 +119,27 @@ $lastUpdatedAt = Carbon::parse(filemtime(__DIR__ . '/../data/downloads/latest.js
                 resolution: 'countries',
                 sizeAxis: {minValue: 1, maxValue: 1, minSize: 10, maxSize: 10},
                 region: region,
-                keepAspectRatio: false,
-                width: 1200,
-                height: 740,
+                keepAspectRatio: true,
                 magnifyingGlass: {enable: true, zoomFactor: 7.5},
                 tooltip: {textStyle: {color: '#444444'}, trigger: 'focus', isHtml: true}
             };
 
-            var chart = new google.visualization.GeoChart(document.getElementById('visualization'));
+            var chart = new google.visualization.GeoChart(document.getElementById('map-canvas'));
             chart.draw(data, options);
         }
 
         $(".region-buttons button").click(function() {
             region = $(this).data('region');
             drawVisualization();
+        });
+
+        var resizeTimer;
+        $(window).resize(function() {
+            clearTimeout(resizeTimer);
+            resizeTimer = setTimeout(function() {
+                $("#map-canvas").html("");
+                drawVisualization();
+            }, 200);
         });
     </script>
 </body>
