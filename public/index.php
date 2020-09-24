@@ -43,19 +43,39 @@ function getAdviceText($countryData): string
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
 
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,400i,700">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 
     <style>
+        body {
+            overflow: hidden;
+        }
         h1 {
             font-family: "Poppins", sans-serif;
             font-weight: 200;
-            margin-bottom: 45px;
+            margin-top: 30px;
+            margin-bottom: 20px;
             font-size: 30px;
+            text-align: center;
+        }
+        h2 {
+            font-family: "Poppins", sans-serif;
+            font-weight: 200;
+            font-size: 13px;
+            text-align: center;
+        }
+
+        .region-buttons {
             text-align: center;
         }
 
         #visualization {
             width: 1200px;
             margin: 0 auto;
+            margin-top: 25px;
+            margin-bottom: 25px;
+        }
+        #visualization small {
+            white-space: nowrap;
         }
 
         .bottom-left {
@@ -69,16 +89,30 @@ function getAdviceText($countryData): string
     </style>
 </head>
 <body>
-    <h1>Doe voor vertrek.. de corona reis check!</h1>
-    <div id='visualization'></div>
+    <div class="container">
+        <h1>Doe voor vertrek.. de corona reis check!</h1>
 
-    <a class="bottom-left" href="https://falcotravel.com">
+        <div class="region-buttons">
+            <button data-region="150" class="btn btn-sm btn-primary">Europa</button>
+            <button data-region="world" class="btn btn-sm btn-secondary">Wereldwijd</button>
+        </div>
+
+        <div id='visualization'></div>
+
+        <h2>Bron: <a href="https://www.nederlandwereldwijd.nl" target="_blank">Nederland Wereldwijd</a>, laatst bijgewerkt: 2 uur terug</h2>
+    </div>
+
+    <a class="bottom-left" href="https://falcotravel.com" target="_blank">
         <img src="/assets/media/falco-logo.png"></a>
     </a>
 
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
     <script type='text/javascript' src='https://www.gstatic.com/charts/loader.js'></script>
-    <script type='text/javascript'>google.load('visualization', '1.1', {'packages': ['geochart']});
+    <script type='text/javascript'>
+        google.load('visualization', '1.1', {'packages': ['geochart']});
         google.setOnLoadCallback(drawVisualization);
+
+        var region = '150';
 
         function drawVisualization() {
             var data = new google.visualization.DataTable();
@@ -111,7 +145,7 @@ function getAdviceText($countryData): string
                 enableRegionInteractivity: 'true',
                 resolution: 'countries',
                 sizeAxis: {minValue: 1, maxValue: 1, minSize: 10, maxSize: 10},
-                region: '150',
+                region: region,
                 keepAspectRatio: false,
                 width: 1200,
                 height: 740,
@@ -122,6 +156,11 @@ function getAdviceText($countryData): string
             var chart = new google.visualization.GeoChart(document.getElementById('visualization'));
             chart.draw(data, options);
         }
+
+        $(".region-buttons button").click(function() {
+            region = $(this).data('region');
+            drawVisualization();
+        });
     </script>
 </body>
 </html>
