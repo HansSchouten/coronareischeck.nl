@@ -13,7 +13,7 @@ $lastUpdatedAt = Carbon::parse(filemtime(__DIR__ . '/../data/downloads/latest.js
     <title>Doe voor vertrek.. de corona reis check!</title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="description" content="Doe voor vertrek, de corona reis check">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,400i,700">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
@@ -25,8 +25,8 @@ $lastUpdatedAt = Carbon::parse(filemtime(__DIR__ . '/../data/downloads/latest.js
         h1 {
             font-family: "Poppins", sans-serif;
             font-weight: 200;
-            margin-top: 30px;
-            margin-bottom: 20px;
+            margin-top: 40px;
+            margin-bottom: 35px;
             font-size: 30px;
             text-align: center;
         }
