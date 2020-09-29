@@ -35,6 +35,11 @@ $lastUpdatedAt = Carbon::parse(filemtime(__DIR__ . '/../../data/downloads/latest
             text-align: center;
         }
 
+        .region-buttons {
+            padding-top: 5px;
+            text-align: center;
+        }
+
         #map-canvas {
             width: 100%;
             height: 100%;
@@ -83,6 +88,10 @@ $lastUpdatedAt = Carbon::parse(filemtime(__DIR__ . '/../../data/downloads/latest
 <body>
 <div class="container">
     <div id="map-canvas" class="d-block"></div>
+    <div class="region-buttons d-none">
+        <button data-region="150" class="btn btn-sm btn-primary">Europa</button>
+        <button data-region="world" class="btn btn-sm btn-primary">Wereldwijd</button>
+    </div>
 </div>
 
 <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
@@ -144,6 +153,8 @@ $lastUpdatedAt = Carbon::parse(filemtime(__DIR__ . '/../../data/downloads/latest
                 window.open(countryData['full_url'], '_blank');
             }
         });
+
+        $(".region-buttons").removeClass("d-none");
     }
 
     function getColorCodeNames(countryData) {
@@ -168,6 +179,11 @@ $lastUpdatedAt = Carbon::parse(filemtime(__DIR__ . '/../../data/downloads/latest
         }
         return codeNames.join(', ');
     }
+
+    $(".region-buttons button").click(function() {
+        region = $(this).data('region');
+        drawVisualization();
+    });
 
     var resizeTimer;
     $(window).resize(function() {
