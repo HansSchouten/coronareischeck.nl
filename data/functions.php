@@ -5,6 +5,7 @@ use League\ColorExtractor\Color;
 function extractWorldCountryData(&$countryData)
 {
     $countryUrl = 'https://www.nederlandwereldwijd.nl/landen/' . $countryData['slug'] . '/reizen/reisadvies';
+    $countryData['full_url'] = $countryUrl;
     $countryInfo = file_get_contents($countryUrl);
 
     if (strpos($countryInfo, '/content-afbeeldingen/reisadviezen/') === false) {
@@ -22,6 +23,7 @@ function extractWorldCountryData(&$countryData)
 function extractDutchCaribbeanData(&$countryData)
 {
     $url = 'https://www.nederlandwereldwijd.nl/reizen/reisadvies-caribisch-deel-van-het-koninkrijk';
+    $countryData['full_url'] = $url;
     $caribbeanInfo = file_get_contents($url);
 
     // combine Bonaire, Sint Eustatius and Saba from separate images
@@ -46,6 +48,7 @@ function extractDutchCaribbeanData(&$countryData)
 
 function extractTravelAdvice(&$countryData, $adviceImageUrl)
 {
+    $countryData['advice_image_url'] = $adviceImageUrl;
     $adviceImagePalette = Palette::fromFilename($adviceImageUrl);
     foreach ($adviceImagePalette as $intColor => $count) {
         if ($count < 200) break;

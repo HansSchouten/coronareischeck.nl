@@ -60,6 +60,7 @@ $lastUpdatedAt = Carbon::parse(filemtime(__DIR__ . '/../data/downloads/latest.js
             width: 200px;
         }
     </style>
+
     <!-- Google Tag Manager -->
     <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
         new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -150,11 +151,11 @@ $lastUpdatedAt = Carbon::parse(filemtime(__DIR__ . '/../data/downloads/latest.js
             }, 200);
         });
     </script>
+
     <!-- Google Tag Manager (noscript) -->
     <noscript>
         <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MVCNMFR"
                 height="0" width="0" style="display:none;visibility:hidden">
-
         </iframe>
     </noscript>
     <!-- End Google Tag Manager (noscript) -->
