@@ -186,7 +186,7 @@ $lastUpdatedAt = Carbon::parse(filemtime(__DIR__ . '/../data/downloads/latest.js
                     var selectedCountryCode = data.getValue(selectedRow, 0);
                     var countryData = dataPerCountry[selectedCountryCode];
                     $("#country-modal .modal-title").text(countryData['name']);
-                    $("#country-modal p").html(countryData['name'] + " heeft momenteel code " + getColorCodeNames(countryData) + ".");
+                    $("#country-modal p").html(countryData['name'] + " heeft momenteel reisadvies code " + getColorCodeNames(countryData) + ".");
                     $("#country-modal img").attr('src', countryData['advice_image_url']);
                     $("#country-modal a").attr('href', countryData['full_url']);
                     $("#country-modal").modal('show');
