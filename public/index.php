@@ -53,6 +53,8 @@ $lastUpdatedAt = Carbon::parse(filemtime(__DIR__ . '/../data/downloads/latest.js
 
         .modal-body img {
             max-width: 100%;
+            max-height: 700px;
+            display: block;
         }
 
         .bottom-left {
