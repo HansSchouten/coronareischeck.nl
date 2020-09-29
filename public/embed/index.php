@@ -195,6 +195,8 @@ $lastUpdatedAt = Carbon::parse(filemtime(__DIR__ . '/../../data/downloads/latest
     }
 
     $(".region-buttons button").click(function() {
+        $("body .hidden").append($(".bottom-right"));
+        $("#map-canvas").html("");
         region = $(this).data('region');
         drawVisualization();
     });
