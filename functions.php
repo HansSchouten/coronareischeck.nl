@@ -24,14 +24,18 @@ function getAdviceText($countryData): string
 {
     $codes = [];
     if ($countryData['code_red']) {
-        $codes[] = 'Rood';
-    } elseif ($countryData['code_orange']) {
-        $codes[] = 'Oranje';
-    } elseif ($countryData['code_yellow']) {
-        $codes[] = 'Geel';
-    } elseif ($countryData['code_green']) {
-        $codes[] = 'Groen';
+        $codes[] = 'rood';
     }
+    if ($countryData['code_orange']) {
+        $codes[] = 'oranje';
+    }
+    if ($countryData['code_yellow']) {
+        $codes[] = 'geel';
+    }
+    if ($countryData['code_green']) {
+        $codes[] = 'groen';
+    }
+    $codesText = implode('/', $codes);
 
-    return 'Code: ' . implode(',', $codes) . "<br><small>Klik voor meer informatie</small>";
+    return 'Code: ' . $codesText . "<br><small>Klik voor meer informatie</small>";
 }

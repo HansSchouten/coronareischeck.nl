@@ -51,6 +51,10 @@ $lastUpdatedAt = Carbon::parse(filemtime(__DIR__ . '/../data/downloads/latest.js
             white-space: nowrap;
         }
 
+        .modal-body img {
+            max-width: 100%;
+        }
+
         .bottom-left {
             position: fixed;
             bottom: 5px;
@@ -58,6 +62,23 @@ $lastUpdatedAt = Carbon::parse(filemtime(__DIR__ . '/../data/downloads/latest.js
         }
         .bottom-left img {
             width: 200px;
+        }
+
+        .badge-red {
+            background: #FF0000;
+            color: #fff;
+        }
+        .badge-orange {
+            background: #FFA000;
+            color: #fff;
+        }
+        .badge-yellow {
+            background: #FFFF00;
+            color: #333;
+        }
+        .badge-green {
+            background: #7FEB00;
+            color: #fff;
         }
     </style>
 
@@ -84,17 +105,37 @@ $lastUpdatedAt = Carbon::parse(filemtime(__DIR__ . '/../data/downloads/latest.js
         <h2>Bron: <a href="https://www.nederlandwereldwijd.nl" target="_blank">Nederland Wereldwijd</a>, laatst bijgewerkt: <?= $lastUpdatedAt->diffForHumans() ?></h2>
     </div>
 
+    <div id="country-modal" class="modal" tabindex="-1" role="dialog">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title"></h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p></p>
+                    <img src="">
+                    <a href="" class="btn btn-primary mt-3" target="_blank">Bekijk het uitgebreide advies</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <a class="bottom-left" href="https://falcotravel.com" target="_blank">
         <img src="/assets/media/falco-logo.png"></a>
     </a>
 
     <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <script type='text/javascript' src='https://www.gstatic.com/charts/loader.js'></script>
     <script type='text/javascript'>
         google.load('visualization', '1.1', {'packages': ['geochart']});
         google.setOnLoadCallback(drawVisualization);
 
         var region = '150';
+        var dataPerCountry = <?= json_encode($advicePerCountry) ?>;
 
         function drawVisualization() {
             var data = new google.visualization.DataTable();
@@ -135,6 +176,43 @@ $lastUpdatedAt = Carbon::parse(filemtime(__DIR__ . '/../data/downloads/latest.js
 
             var chart = new google.visualization.GeoChart(document.getElementById('map-canvas'));
             chart.draw(data, options);
+
+            google.visualization.events.addListener(chart, 'select', function() {
+                var selection = chart.getSelection();
+                if (selection.length === 1) {
+                    var selectedRow = selection[0].row;
+                    var selectedCountryCode = data.getValue(selectedRow, 0);
+                    var countryData = dataPerCountry[selectedCountryCode];
+                    $("#country-modal .modal-title").text(countryData['name']);
+                    $("#country-modal p").html(countryData['name'] + " heeft momenteel code " + getColorCodeNames(countryData) + ".");
+                    $("#country-modal img").attr('src', countryData['advice_image_url']);
+                    $("#country-modal a").attr('href', countryData['full_url']);
+                    $("#country-modal").modal('show');
+                }
+            });
+        }
+
+        function getColorCodeNames(countryData) {
+            var codeNames = [];
+            if (countryData['code_red']) {
+                codeNames.push('<b class="badge badge-red">rood</b>');
+            }
+            if (countryData['code_orange']) {
+                codeNames.push('<b class="badge badge-orange">oranje</b>');
+            }
+            if (countryData['code_yellow']) {
+                codeNames.push('<b class="badge badge-yellow">geel</b>');
+            }
+            if (countryData['code_groen']) {
+                codeNames.push('<b class="badge badge-green">groen</b>');
+            }
+            if (codeNames.length === 0) {
+                return 'onbekend';
+            }
+            if (codeNames.length === 2) {
+                return codeNames.join(' en ');
+            }
+            return codeNames.join(', ');
         }
 
         $(".region-buttons button").click(function() {
