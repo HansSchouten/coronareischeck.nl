@@ -42,6 +42,7 @@ $lastUpdatedAt = Carbon::parse(filemtime(__DIR__ . '/../data/downloads/latest.js
         }
 
         #map-canvas {
+            position: relative;
             width: 100%;
             margin: 0 auto;
             margin-top: 25px;
@@ -140,12 +141,6 @@ $lastUpdatedAt = Carbon::parse(filemtime(__DIR__ . '/../data/downloads/latest.js
         var dataPerCountry = <?= json_encode($advicePerCountry) ?>;
 
         function drawVisualization() {
-            var data = new google.visualization.DataTable();
-
-            data.addColumn('string', 'Country');
-            data.addColumn('number', 'Value');
-            data.addColumn({type: 'string', role: 'tooltip'});
-
             var data = google.visualization.arrayToDataTable([
                 ['Country', 'Value', {role: 'tooltip', p:{html:true}}],
                 <?php
