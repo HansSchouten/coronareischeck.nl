@@ -105,7 +105,7 @@ $lastUpdatedAt = Carbon::parse(filemtime(__DIR__ . '/../../data/downloads/latest
     </div>
 
     <div class="hidden d-none">
-        <a class="bottom-right" href="https://falcotravel.com" target="_blank">
+        <a class="bottom-right" href="https://www.falcotravel.com/nl/blog/corona-reis-check" target="_blank">
             <img src="/assets/media/falco-logo.png"></a>
         </a>
     </div>
