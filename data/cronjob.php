@@ -25,11 +25,7 @@ foreach ($countryList as $country) {
         'code_green' => false
     ];
 
-    if (isset($country['dutch_caribbean'])) {
-        extractDutchCaribbeanData($countryData);
-    } else {
-        extractWorldCountryData($countryData);
-    }
+    extractWorldCountryData($countryData);
 
     $dataPerCountry[$country['iso2_code']] = $countryData;
 

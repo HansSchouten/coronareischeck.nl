@@ -55,8 +55,7 @@
   },
   {
     "name": "Aruba",
-    "iso2_code": "AW",
-    "dutch_caribbean": true
+    "iso2_code": "AW"
   },
   {
     "name": "Australië",
@@ -109,8 +108,7 @@
   },
   {
     "name": "Bonaire, Sint Eustatius en Saba",
-    "iso2_code": "BQ",
-    "dutch_caribbean": true
+    "iso2_code": "BQ"
   },
   {
     "name": "Bosnië en Herzegovina",
@@ -217,9 +215,7 @@
   },
   {
     "name": "Curaçao",
-    "iso2_code": "CW",
-    "slug": "curac%CC%A7ao",
-    "dutch_caribbean": true
+    "iso2_code": "CW"
   },
   {
     "name": "Cyprus",
@@ -849,15 +845,11 @@
   },
   {
     "name": "Sint-Maarten",
-    "iso2_code": "MF",
-    "slug": "sint20maarten",
-    "dutch_caribbean": true
+    "iso2_code": "MF"
   },
   {
     "name": "Sint Maarten",
-    "iso2_code": "SX",
-    "slug": "sint20maarten",
-    "dutch_caribbean": true
+    "iso2_code": "SX"
   },
   {
     "name": "Slovenië",

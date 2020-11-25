@@ -19,33 +19,6 @@ function extractWorldCountryData(&$countryData)
     extractTravelAdvice($countryData, $adviceImageUrl);
 }
 
-// special extraction method for Dutch Caribbean, because f*ck consistency
-function extractDutchCaribbeanData(&$countryData)
-{
-    $url = 'https://www.nederlandwereldwijd.nl/reizen/reisadvies-caribisch-deel-van-het-koninkrijk';
-    $countryData['full_url'] = $url;
-    $caribbeanInfo = file_get_contents($url);
-
-    // combine Bonaire, Sint Eustatius and Saba from separate images
-    if ($countryData['iso2_code'] === 'BQ') {
-        $islandSlugs = ['bonaire', 'saba', 'sint20eustatius'];
-        foreach ($islandSlugs as $islandSlug) {
-            $urlMatches = [];
-            preg_match('~binaries/medium/content/gallery/nederlandwereldwijd/content-afbeeldingen/reisadviezen/caribisch-nederland/reisadvies_' . $islandSlug . '(.+).png~', $caribbeanInfo, $urlMatches);
-            $adviceImageUrl = 'https://www.nederlandwereldwijd.nl/' . $urlMatches[0];
-
-            extractTravelAdvice($countryData, $adviceImageUrl);
-        }
-        return;
-    }
-
-    $urlMatches = [];
-    preg_match('~binaries/medium/content/gallery/nederlandwereldwijd/content-afbeeldingen/reisadviezen/caribisch-nederland/reisadvies_' . $countryData['slug'] . '(.+).png~', $caribbeanInfo, $urlMatches);
-    $adviceImageUrl = 'https://www.nederlandwereldwijd.nl/' . $urlMatches[0];
-
-    extractTravelAdvice($countryData, $adviceImageUrl);
-}
-
 function extractTravelAdvice(&$countryData, $adviceImageUrl)
 {
     $countryData['advice_image_url'] = $adviceImageUrl;
