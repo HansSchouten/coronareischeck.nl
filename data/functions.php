@@ -24,7 +24,7 @@ function extractTravelAdvice(&$countryData, $adviceImageUrl)
     $countryData['advice_image_url'] = $adviceImageUrl;
     $adviceImagePalette = Palette::fromFilename($adviceImageUrl);
     foreach ($adviceImagePalette as $intColor => $count) {
-        if ($count < 200) break;
+        if ($count < 400) break;
 
         switch (Color::fromIntToHex($intColor)) {
             case '#FF0000':
