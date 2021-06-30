@@ -18,13 +18,14 @@ $lastUpdatedAt = Carbon::parse(filemtime(__DIR__ . '/../data/downloads/latest.js
         })(window,document,'script','dataLayer','GTM-MVCNMFR');
     </script>
     <!-- End Google Tag Manager -->
-    <title>Doe voor vertrek.. de corona reischeck!</title>
+    <title>Doe de reischeck voor actueel corona reisadvies</title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="description" content="Bekijk op een handige kaart het actuele corona reisadvies voor alle landen in europa of wereldwijd.">
+    <meta name="description" content="Het actuele corona reisadvies bekijken? Met onze handige kaart check je direct het reisadvies voor alle landen in europa of wereldwijd.">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,400i,700">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <style>
         body {
@@ -102,7 +103,7 @@ $lastUpdatedAt = Carbon::parse(filemtime(__DIR__ . '/../data/downloads/latest.js
     </noscript>
     <!-- End Google Tag Manager (noscript) -->
     <div class="container">
-        <h1>Doe voor vertrek.. de corona reis check!</h1>
+        <h1>Doe voor vertrek.. de corona reischeck!</h1>
 
         <div class="region-buttons">
             <button data-region="150" class="btn btn-sm btn-primary">Europa</button>
@@ -114,6 +115,59 @@ $lastUpdatedAt = Carbon::parse(filemtime(__DIR__ . '/../data/downloads/latest.js
         <h2>Bron: <a href="https://www.nederlandwereldwijd.nl" target="_blank">Nederland Wereldwijd</a>, laatst bijgewerkt: <?= $lastUpdatedAt->diffForHumans() ?></h2>
     </div>
 
+    <?php
+    $availableOnVilando = [
+        'BE' => 'belgie',
+        'DE' => 'duitsland',
+        'FR' => 'frankrijk',
+        'GR' => 'griekenland',
+        'IT' => 'italie',
+        'HR' => 'kroatie',
+        'AT' => 'oostenrijk',
+        'ES' => 'spanje',
+        'CZ' => 'tsjechie',
+        'CH' => 'zwitserland',
+        'DK' => 'denemarken',
+        'NO' => 'noorwegen',
+        'SE' => 'zweden',
+        'HU' => 'hongarije',
+        'GB' => 'verenigd-koninkrijk',
+        'LU' => 'luxemburg',
+        'PL' => 'polen',
+        'SK' => 'slowakije',
+        'SI' => 'slovenie',
+        'PT' => 'portugal',
+        'CY' => 'cyprus',
+        'IE' => 'ierland',
+        'FI' => 'finland',
+        'MT' => 'malta'
+    ];
+    foreach ($availableOnVilando as $countryCode => $countrySlug):
+        $countryData = $advicePerCountry[$countryCode]
+    ?>
+    <div id="country-modal-<?= $countryCode ?>" class="modal" tabindex="-1" role="dialog">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title"></h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p></p>
+                    <img src="" style="margin: 0 auto">
+                    <a href="" class="travel-advice btn btn-primary mt-3" target="_blank">Bekijk uitgebreid reisadvies</a>
+                    <a href="https://www.vilando.nl/vakantiehuizen/<?= $countrySlug ?>" class="vilando-link btn btn-secondary mt-3 float-right" target="_blank" title="Vakantiehuis in <?= e($countryData['name']) ?> huren">
+                        Bekijk bestemmingen in <?= e($countryData['name']) ?>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <?php
+    endforeach;
+    ?>
     <div id="country-modal" class="modal" tabindex="-1" role="dialog">
         <div class="modal-dialog modal-lg" role="document">
             <div class="modal-content">
@@ -125,8 +179,8 @@ $lastUpdatedAt = Carbon::parse(filemtime(__DIR__ . '/../data/downloads/latest.js
                 </div>
                 <div class="modal-body">
                     <p></p>
-                    <img src="">
-                    <a href="" class="btn btn-primary mt-3" target="_blank">Bekijk het uitgebreide advies</a>
+                    <img src="" style="margin: 0 auto">
+                    <a href="" class="btn btn-primary mt-3" target="_blank">Bekijk uitgebreid reisadvies</a>
                 </div>
             </div>
         </div>
@@ -186,11 +240,15 @@ $lastUpdatedAt = Carbon::parse(filemtime(__DIR__ . '/../data/downloads/latest.js
                     var selectedRow = selection[0].row;
                     var selectedCountryCode = data.getValue(selectedRow, 0);
                     var countryData = dataPerCountry[selectedCountryCode];
-                    $("#country-modal .modal-title").text(countryData['name']);
-                    $("#country-modal p").html(countryData['name'] + " heeft momenteel reisadvies code " + getColorCodeNames(countryData) + ".");
-                    $("#country-modal img").attr('src', '').attr('src', countryData['advice_image_url']);
-                    $("#country-modal a").attr('href', countryData['full_url']);
-                    $("#country-modal").modal('show');
+                    var $modal = $("#country-modal");
+                    if ($("#country-modal-" + selectedCountryCode).length) {
+                        $modal = $("#country-modal-" + selectedCountryCode);
+                    }
+                    $modal.find(".modal-title").text(countryData['name']);
+                    $modal.find("p").html(countryData['name'] + " heeft momenteel reisadvies code " + getColorCodeNames(countryData) + ".");
+                    $modal.find("img").attr('src', '').attr('src', countryData['advice_image_url']);
+                    $modal.find("a.travel-advice").attr('href', countryData['full_url']);
+                    $modal.modal('show');
                 }
             });
         }
