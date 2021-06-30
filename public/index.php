@@ -28,9 +28,6 @@ $lastUpdatedAt = Carbon::parse(filemtime(__DIR__ . '/../data/downloads/latest.js
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <style>
-        body {
-            overflow: hidden;
-        }
         h1 {
             font-family: "Poppins", sans-serif;
             font-weight: 200;
@@ -103,7 +100,13 @@ $lastUpdatedAt = Carbon::parse(filemtime(__DIR__ . '/../data/downloads/latest.js
     </noscript>
     <!-- End Google Tag Manager (noscript) -->
     <div class="container">
-        <h1>Doe voor vertrek.. de corona reischeck!</h1>
+        <h1 class="mb-3">Doe voor vertrek.. de corona reischeck</h1>
+        <center class="mb-4">
+            Bekijk het overzicht van de actuele corona reisadviezen per land.<br>
+            De adviezen worden elk uur automatisch bijgewerkt met de officiële reisinformatie van <a href="https://www.nederlandwereldwijd.nl" target="_blank">Nederland Wereldwijd</a>.<br>
+            Maak een keuze tussen europa of wereldwijd en klik op een land voor meer informatie.<br>
+            Fijne reis!
+        </center>
 
         <div class="region-buttons">
             <button data-region="150" class="btn btn-sm btn-primary">Europa</button>
@@ -264,7 +267,7 @@ $lastUpdatedAt = Carbon::parse(filemtime(__DIR__ . '/../data/downloads/latest.js
             if (countryData['code_yellow']) {
                 codeNames.push('<b class="badge badge-yellow">geel</b>');
             }
-            if (countryData['code_groen']) {
+            if (countryData['code_green']) {
                 codeNames.push('<b class="badge badge-green">groen</b>');
             }
             if (codeNames.length === 0) {
