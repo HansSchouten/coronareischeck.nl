@@ -20,7 +20,7 @@ $lastUpdatedAt = Carbon::parse(filemtime(__DIR__ . '/../data/downloads/latest.js
     <!-- End Google Tag Manager -->
     <title>Doe voor vertrek.. de corona reischeck!</title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="description" content="Bekijk op een handige kaart het actuele corona advies voor alle landen in europa of wereldwijd.">
+    <meta name="description" content="Bekijk op een handige kaart het actuele corona reisadvies voor alle landen in europa of wereldwijd.">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,400i,700">
