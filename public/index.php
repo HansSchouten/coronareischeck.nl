@@ -39,8 +39,17 @@ $lastUpdatedAt = Carbon::parse(filemtime(__DIR__ . '/../data/downloads/latest.js
         h2 {
             font-family: "Poppins", sans-serif;
             font-weight: 200;
+            margin-top: 50px;
+            margin-bottom: 30px;
+            font-size: 28px;
+            text-align: center;
+        }
+        .sub-text {
+            font-family: "Poppins", sans-serif;
+            font-weight: 200;
             font-size: 13px;
             text-align: center;
+            margin: 0 auto;
         }
 
         .region-buttons {
@@ -52,7 +61,7 @@ $lastUpdatedAt = Carbon::parse(filemtime(__DIR__ . '/../data/downloads/latest.js
             width: 100%;
             margin: 0 auto;
             margin-top: 25px;
-            margin-bottom: 25px;
+            margin-bottom: 10px;
         }
         #map-canvas small {
             white-space: nowrap;
@@ -111,11 +120,18 @@ $lastUpdatedAt = Carbon::parse(filemtime(__DIR__ . '/../data/downloads/latest.js
         <div class="region-buttons">
             <button data-region="150" class="btn btn-sm btn-primary">Kaart Europa</button>
             <button data-region="world" class="btn btn-sm btn-secondary">Kaart wereldwijd</button>
+
+            <button class="btn btn-sm btn-success ml-3">Veilige reisbestemmingen</button>
         </div>
 
         <div id="map-canvas"></div>
+        <p class="sub-text">Bron: <a href="https://www.nederlandwereldwijd.nl" target="_blank">Nederland Wereldwijd</a>, laatst bijgewerkt: <?= $lastUpdatedAt->diffForHumans() ?></p>
 
-        <h2>Bron: <a href="https://www.nederlandwereldwijd.nl" target="_blank">Nederland Wereldwijd</a>, laatst bijgewerkt: <?= $lastUpdatedAt->diffForHumans() ?></h2>
+        <h2>Veilige reisbestemmingen</h2>
+        <p class="mb-4 text-center">
+            Op zoek naar een reislocatie met een groen of geel reisadvies?<br>
+            De volgende reisbestemmingen zijn momenteel geen corona risicogebied.
+        </p>
     </div>
 
     <?php
@@ -280,8 +296,10 @@ $lastUpdatedAt = Carbon::parse(filemtime(__DIR__ . '/../data/downloads/latest.js
         }
 
         $(".region-buttons button").click(function() {
-            region = $(this).data('region');
-            drawVisualization();
+            if ($(this).data('region')) {
+                region = $(this).data('region');
+                drawVisualization();
+            }
         });
 
         var resizeTimer;
