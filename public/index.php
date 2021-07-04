@@ -87,7 +87,7 @@ $availableOnVilando = [
             position: relative;
             width: 100%;
             margin: 0 auto;
-            margin-top: 25px;
+            margin-top: 20px;
             margin-bottom: 10px;
         }
         #map-canvas small {
@@ -106,7 +106,7 @@ $availableOnVilando = [
             left: 10px;
         }
         .bottom-left img {
-            width: 200px;
+            width: 175px;
         }
 
         .badge-red {
@@ -140,6 +140,31 @@ $availableOnVilando = [
             line-height: .5;
             border-radius: .2rem;
         }
+
+        @media (max-width: 720px) {
+            ul.safe-destinations-list {
+                width: 100%;
+                padding-left: 20px;
+                margin-bottom: 50px;
+            }
+            ul.safe-destinations-list li {
+                display: table;
+                margin-bottom: 15px;
+            }
+            ul.safe-destinations-list li span {
+                float: left !important;
+            }
+            ul.safe-destinations-list li a {
+                float: left !important;
+            }
+            ul.safe-destinations-list li a:first-of-type {
+                clear: left;
+                margin-right: 5px;
+            }
+            .bottom-left {
+                position: relative;
+            }
+        }
     </style>
 </head>
 <body>
@@ -160,16 +185,14 @@ $availableOnVilando = [
         </p>
 
         <div class="region-buttons">
-            <button data-region="150" class="btn btn-sm btn-primary">Kaart Europa</button>
-            <button data-region="world" class="btn btn-sm btn-secondary">Kaart wereldwijd</button>
+            <button data-region="150" class="btn btn-sm mb-1 btn-primary">Kaart Europa</button>
+            <button data-region="world" class="btn btn-sm mb-1 btn-secondary">Kaart wereldwijd</button>
 
-            <button class="btn btn-sm btn-success ml-3">Veilige reisbestemmingen</button>
+            <button class="btn btn-sm btn-success mb-1 ml-3">Veilige reisbestemmingen</button>
         </div>
 
         <div id="map-canvas"></div>
         <p class="sub-text">Bron: <a href="https://www.nederlandwereldwijd.nl" target="_blank">Nederland Wereldwijd</a>, laatst bijgewerkt: <?= $lastUpdatedAt->diffForHumans() ?></p>
-
-        <hr>
 
         <h2 class="safe-destinations">Veilige reisbestemmingen</h2>
         <p class="mb-3 text-center">
