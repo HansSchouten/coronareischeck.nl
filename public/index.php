@@ -101,16 +101,16 @@ $lastUpdatedAt = Carbon::parse(filemtime(__DIR__ . '/../data/downloads/latest.js
     <!-- End Google Tag Manager (noscript) -->
     <div class="container">
         <h1 class="mb-3">Doe voor vertrek.. de corona reischeck</h1>
-        <center class="mb-4">
+        <p class="mb-4 text-center">
             Bekijk het overzicht van de actuele corona reisadviezen per land.<br>
             De adviezen worden elk uur automatisch bijgewerkt met de officiële reisinformatie van <a href="https://www.nederlandwereldwijd.nl" target="_blank">Nederland Wereldwijd</a>.<br>
             Maak een keuze tussen europa of wereldwijd en klik op een land voor meer informatie.<br>
             Fijne reis!
-        </center>
+        </p>
 
         <div class="region-buttons">
-            <button data-region="150" class="btn btn-sm btn-primary">Europa</button>
-            <button data-region="world" class="btn btn-sm btn-secondary">Wereldwijd</button>
+            <button data-region="150" class="btn btn-sm btn-primary">Kaart Europa</button>
+            <button data-region="world" class="btn btn-sm btn-secondary">Kaart wereldwijd</button>
         </div>
 
         <div id="map-canvas"></div>
