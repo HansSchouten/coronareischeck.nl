@@ -55,10 +55,27 @@ function getAdviceBadges($countryData): string
     if ($countryData['code_green']) {
         $badges[] = '<b class="badge badge-green">groen</b>';
     }
+    $badges = array_reverse($badges);
     if (sizeof($badges) === 0) {
         return 'onbekend';
     } elseif (sizeof($badges) === 2) {
         return implode(' en ', $badges);
     }
     return implode(', ', $badges);
+}
+
+function renderSafeDestination($countryData, $availableOnVilando = []): string
+{
+    $adviceBadgesHtml = getAdviceBadges($countryData);
+    $vilandoButton = '';
+    if (isset($availableOnVilando[$countryData['iso2_code']])) {
+        $vilandoButton = "<a href='https://www.vilando.nl/vakantiehuizen/{$availableOnVilando[$countryData['iso2_code']]}' target='_blank' class='btn btn-secondary btn-xs mr-1 float-right'>Zoeken</a>";
+    }
+    return <<<EOD
+<li>
+    <strong>{$countryData['name']}</strong> heeft reisadvies {$adviceBadgesHtml}
+    <a href="{$countryData['full_url']}" target="_blank" class="btn btn-success btn-xs float-right">Bekijk advies</a>
+    {$vilandoButton}
+</li>
+EOD;
 }

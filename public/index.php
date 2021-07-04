@@ -127,11 +127,18 @@ $availableOnVilando = [
         }
 
         ul.safe-destinations-list {
-            max-width: 500px;
+            max-width: 600px;
             margin: 0 auto;
-            font-size: 1.05em;
-            line-height: 2em;
             margin-bottom: 85px;
+            font-size: 1em;
+            line-height: 2em;
+        }
+
+        .btn-group-xs > .btn, .btn-xs {
+            padding: .5rem .4rem;
+            font-size: .875rem;
+            line-height: .5;
+            border-radius: .2rem;
         }
     </style>
 </head>
@@ -165,31 +172,36 @@ $availableOnVilando = [
         <hr>
 
         <h2 class="safe-destinations">Veilige reisbestemmingen</h2>
-        <p class="mb-4 text-center">
+        <p class="mb-3 text-center">
             Op zoek naar een reislocatie met een groen of geel reisadvies?<br>
-            De volgende reisbestemmingen zijn momenteel geen corona risicogebied:
+            De volgende reisbestemmingen zijn momenteel verlaagd corona risicogebied:
         </p>
         <ul class="safe-destinations-list">
             <?php
-            foreach ($availableOnVilando as $countryCode => $countrySlug):
+            $availableOnVilandoCountryCodes = array_keys($availableOnVilando);
+            foreach ($availableOnVilando as $countryCode => $countrySlug) {
                 $countryData = $advicePerCountry[$countryCode];
-                if ($countryData['code_green']):
-            ?>
-                    <li><strong><?= $countryData['name'] ?></strong> heeft reisadvies <?= getAdviceBadges($countryData) ?></li>
-            <?php
-                endif;
-            endforeach;
-            ?>
+                if ($countryData['code_green']) {
+                    echo renderSafeDestination($countryData, $availableOnVilando);
+                }
+            }
+            foreach ($advicePerCountry as $countryCode => $countryData) {
+                if (! in_array($countryCode, $availableOnVilandoCountryCodes) && $countryData['code_green']) {
+                    echo renderSafeDestination($countryData);
+                }
+            }
 
-            <?php
-            foreach ($availableOnVilando as $countryCode => $countrySlug):
+            foreach ($availableOnVilando as $countryCode => $countrySlug) {
                 $countryData = $advicePerCountry[$countryCode];
-                if ($countryData['code_yellow']):
-                    ?>
-                    <li><strong><?= $countryData['name'] ?></strong> heeft reisadvies <?= getAdviceBadges($countryData) ?></li>
-                <?php
-                endif;
-            endforeach;
+                if ($countryData['code_yellow'] && ! $countryData['code_green']) {
+                    echo renderSafeDestination($countryData, $availableOnVilando);
+                }
+            }
+            foreach ($advicePerCountry as $countryCode => $countryData) {
+                if (! in_array($countryCode, $availableOnVilandoCountryCodes) && $countryData['code_yellow'] && ! $countryData['code_green']) {
+                    echo renderSafeDestination($countryData);
+                }
+            }
             ?>
         </ul>
     </div>
