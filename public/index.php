@@ -5,6 +5,33 @@ require_once __DIR__ . '/../core.php';
 
 $advicePerCountry = json_decode(file_get_contents(__DIR__ . '/../data/downloads/latest.json'), true);
 $lastUpdatedAt = Carbon::parse(filemtime(__DIR__ . '/../data/downloads/latest.json'));
+
+$availableOnVilando = [
+    'BE' => 'belgie',
+    'DE' => 'duitsland',
+    'FR' => 'frankrijk',
+    'GR' => 'griekenland',
+    'IT' => 'italie',
+    'HR' => 'kroatie',
+    'AT' => 'oostenrijk',
+    'ES' => 'spanje',
+    'CZ' => 'tsjechie',
+    'CH' => 'zwitserland',
+    'DK' => 'denemarken',
+    'NO' => 'noorwegen',
+    'SE' => 'zweden',
+    'HU' => 'hongarije',
+    'GB' => 'verenigd-koninkrijk',
+    'LU' => 'luxemburg',
+    'PL' => 'polen',
+    'SK' => 'slowakije',
+    'SI' => 'slovenie',
+    'PT' => 'portugal',
+    'CY' => 'cyprus',
+    'IE' => 'ierland',
+    'FI' => 'finland',
+    'MT' => 'malta'
+];
 ?>
 <!DOCTYPE html>
 <html lang="nl">
@@ -98,6 +125,14 @@ $lastUpdatedAt = Carbon::parse(filemtime(__DIR__ . '/../data/downloads/latest.js
             background: #7FEB00;
             color: #fff;
         }
+
+        ul.safe-destinations-list {
+            max-width: 500px;
+            margin: 0 auto;
+            font-size: 1.05em;
+            line-height: 2em;
+            margin-bottom: 85px;
+        }
     </style>
 </head>
 <body>
@@ -127,40 +162,39 @@ $lastUpdatedAt = Carbon::parse(filemtime(__DIR__ . '/../data/downloads/latest.js
         <div id="map-canvas"></div>
         <p class="sub-text">Bron: <a href="https://www.nederlandwereldwijd.nl" target="_blank">Nederland Wereldwijd</a>, laatst bijgewerkt: <?= $lastUpdatedAt->diffForHumans() ?></p>
 
-        <h2>Veilige reisbestemmingen</h2>
+        <hr>
+
+        <h2 class="safe-destinations">Veilige reisbestemmingen</h2>
         <p class="mb-4 text-center">
             Op zoek naar een reislocatie met een groen of geel reisadvies?<br>
-            De volgende reisbestemmingen zijn momenteel geen corona risicogebied.
+            De volgende reisbestemmingen zijn momenteel geen corona risicogebied:
         </p>
+        <ul class="safe-destinations-list">
+            <?php
+            foreach ($availableOnVilando as $countryCode => $countrySlug):
+                $countryData = $advicePerCountry[$countryCode];
+                if ($countryData['code_green']):
+            ?>
+                    <li><strong><?= $countryData['name'] ?></strong> heeft reisadvies <?= getAdviceBadges($countryData) ?></li>
+            <?php
+                endif;
+            endforeach;
+            ?>
+
+            <?php
+            foreach ($availableOnVilando as $countryCode => $countrySlug):
+                $countryData = $advicePerCountry[$countryCode];
+                if ($countryData['code_yellow']):
+                    ?>
+                    <li><strong><?= $countryData['name'] ?></strong> heeft reisadvies <?= getAdviceBadges($countryData) ?></li>
+                <?php
+                endif;
+            endforeach;
+            ?>
+        </ul>
     </div>
 
     <?php
-    $availableOnVilando = [
-        'BE' => 'belgie',
-        'DE' => 'duitsland',
-        'FR' => 'frankrijk',
-        'GR' => 'griekenland',
-        'IT' => 'italie',
-        'HR' => 'kroatie',
-        'AT' => 'oostenrijk',
-        'ES' => 'spanje',
-        'CZ' => 'tsjechie',
-        'CH' => 'zwitserland',
-        'DK' => 'denemarken',
-        'NO' => 'noorwegen',
-        'SE' => 'zweden',
-        'HU' => 'hongarije',
-        'GB' => 'verenigd-koninkrijk',
-        'LU' => 'luxemburg',
-        'PL' => 'polen',
-        'SK' => 'slowakije',
-        'SI' => 'slovenie',
-        'PT' => 'portugal',
-        'CY' => 'cyprus',
-        'IE' => 'ierland',
-        'FI' => 'finland',
-        'MT' => 'malta'
-    ];
     foreach ($availableOnVilando as $countryCode => $countrySlug):
         $countryData = $advicePerCountry[$countryCode]
     ?>
@@ -225,7 +259,7 @@ $lastUpdatedAt = Carbon::parse(filemtime(__DIR__ . '/../data/downloads/latest.js
                 <?php
                 foreach ($advicePerCountry as $countryCode => $countryData):
                 ?>
-                [{v: '<?= $countryCode ?>', f: '<?= e($countryData['name']) ?>'}, <?= getAdviceValue($countryData) ?>, '<?= getAdviceText($countryData)?>'],
+                [{v: '<?= $countryCode ?>', f: '<?= e($countryData['name']) ?>'}, <?= getAdviceValue($countryData) ?>, '<?= getAdviceText($countryData) ?>'],
                 <?php
                 endforeach;
                 ?>
@@ -299,6 +333,13 @@ $lastUpdatedAt = Carbon::parse(filemtime(__DIR__ . '/../data/downloads/latest.js
             if ($(this).data('region')) {
                 region = $(this).data('region');
                 drawVisualization();
+                $("body, html").animate({
+                    scrollTop: $(".region-buttons").offset().top - 25
+                }, 600);
+            } else {
+                $("body, html").animate({
+                    scrollTop: $(".safe-destinations").offset().top - 25
+                }, 600);
             }
         });
 
