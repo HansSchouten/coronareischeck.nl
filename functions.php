@@ -67,9 +67,10 @@ function getAdviceBadges($countryData): string
 function renderSafeDestination($countryData, $availableOnVilando = []): string
 {
     $adviceBadgesHtml = getAdviceBadges($countryData);
+    $countryName = e($countryData['name']);
     $vilandoButton = '';
     if (isset($availableOnVilando[$countryData['iso2_code']])) {
-        $vilandoButton = "<a href='https://www.vilando.nl/vakantiehuizen/{$availableOnVilando[$countryData['iso2_code']]}' target='_blank' class='btn btn-secondary btn-xs mr-1 float-right'>Zoeken</a>";
+        $vilandoButton = "<a href='https://www.vilando.nl/vakantiehuizen/{$availableOnVilando[$countryData['iso2_code']]}' title='Vakantiehuis in {$countryName} huren' target='_blank' class='btn btn-secondary btn-xs mr-1 float-right'>Bestemmingen</a>";
     }
     return <<<EOD
 <li>
