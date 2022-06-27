@@ -4,7 +4,7 @@ use League\ColorExtractor\Color;
 
 function extractWorldCountryData(&$countryData)
 {
-    $countryUrl = 'https://www.nederlandwereldwijd.nl/landen/' . $countryData['slug'] . '/reizen/reisadvies';
+    $countryUrl = 'https://www.nederlandwereldwijd.nl/reisadvies/' . $countryData['slug'];
     $countryData['full_url'] = $countryUrl;
     $countryInfo = file_get_contents($countryUrl);
 
@@ -13,10 +13,15 @@ function extractWorldCountryData(&$countryData)
     }
 
     $urlMatches = [];
-    preg_match('~binaries/large/content/gallery/nederlandwereldwijd/content-afbeeldingen/reisadviezen/(.+).png~', $countryInfo, $urlMatches);
-    $adviceImageUrl = 'https://www.nederlandwereldwijd.nl/' . $urlMatches[0];
+    preg_match('~binaries/content/gallery/nederlandwereldwijd/content-afbeeldingen/reisadviezen/(.+).png~', $countryInfo, $urlMatches);
+    if (empty($urlMatches)) {
+        echo $countryData['name'] . " not found\n";
+        return false;
+    }
+    $adviceImageUrl = 'https://opendata.nederlandwereldwijd.nl/' . $urlMatches[0];
 
     extractTravelAdvice($countryData, $adviceImageUrl);
+    return true;
 }
 
 function extractTravelAdvice(&$countryData, $adviceImageUrl)

@@ -25,9 +25,9 @@ foreach ($countryList as $country) {
         'code_green' => false
     ];
 
-    extractWorldCountryData($countryData);
-
-    $dataPerCountry[$country['iso2_code']] = $countryData;
+    if (extractWorldCountryData($countryData)) {
+        $dataPerCountry[$country['iso2_code']] = $countryData;
+    }
 
     // give the remote server some time to relax and enjoy this beautiful day
     sleep(0.5);
