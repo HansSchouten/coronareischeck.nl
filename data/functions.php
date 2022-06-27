@@ -18,7 +18,8 @@ function extractWorldCountryData(&$countryData)
         echo $countryData['name'] . " not found\n";
         return false;
     }
-    $adviceImageUrl = 'https://opendata.nederlandwereldwijd.nl/' . $urlMatches[0];
+    $imagePath = explode('.png', $urlMatches[0])[0] . '.png';
+    $adviceImageUrl = 'https://opendata.nederlandwereldwijd.nl/' . $imagePath;
 
     extractTravelAdvice($countryData, $adviceImageUrl);
     return true;
