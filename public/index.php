@@ -127,7 +127,7 @@ $availableOnVilando = [
         }
 
         ul.safe-destinations-list {
-            max-width: 600px;
+            max-width: 735px;
             margin: 0 auto;
             margin-bottom: 85px;
             font-size: 1em;
