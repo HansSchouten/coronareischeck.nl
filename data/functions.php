@@ -8,19 +8,32 @@ function extractWorldCountryData(&$countryData)
     $countryData['full_url'] = $countryUrl;
     $countryInfo = file_get_contents($countryUrl);
 
-    if (strpos($countryInfo, '/content-afbeeldingen/reisadviezen/') === false) {
+    if (strpos($countryInfo, 'opendata.nederlandwereldwijd.nl') === false) {
         return;
     }
 
-    $urlMatches = [];
-    preg_match('~binaries/content/gallery/nederlandwereldwijd/content-afbeeldingen/reisadviezen/(.+).png~', $countryInfo, $urlMatches);
-    if (empty($urlMatches)) {
+    $imageTagMatches = [];
+    preg_match('~<img class="land_countryMap__wvBpL"(.+?)/>~', $countryInfo, $imageTagMatches);
+    if (empty($imageTagMatches)) {
         echo $countryData['name'] . " not found\n";
         return false;
     }
-    $imagePath = explode('.png', $urlMatches[0])[0] . '.png';
-    $adviceImageUrl = 'https://opendata.nederlandwereldwijd.nl/' . $imagePath;
 
+    $imageTagMatch = $imageTagMatches[0];
+    $imageSrc = [];
+    preg_match('~src="(.+?)"~', $imageTagMatch, $imageSrc);
+    if (empty($imageSrc)) {
+        echo $countryData['name'] . " not found\n";
+        return false;
+    }
+
+    $imageSrc = $imageSrc[1];
+    if (strpos($imageSrc, 'https://opendata.nederlandwereldwijd.nl') !== 0 || strpos($imageSrc, '.png') === false) {
+        echo $countryData['name'] . " not found\n";
+        return false;
+    }
+
+    $adviceImageUrl = $imageSrc;
     extractTravelAdvice($countryData, $adviceImageUrl);
     return true;
 }

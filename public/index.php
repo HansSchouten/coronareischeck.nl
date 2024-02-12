@@ -3,6 +3,13 @@ use Carbon\Carbon;
 
 require_once __DIR__ . '/../core.php';
 
+/*
+if ($debugMode) {
+    require_once __DIR__ . '/../data/cronjob.php';
+    exit();
+}
+*/
+
 $advicePerCountry = json_decode(file_get_contents(__DIR__ . '/../data/downloads/latest.json'), true);
 $lastUpdatedAt = Carbon::parse(filemtime(__DIR__ . '/../data/downloads/latest.json'));
 
