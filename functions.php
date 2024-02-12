@@ -77,7 +77,7 @@ function renderSafeDestination($countryData, $availableOnVilando = []): string
     <span>
         <strong>{$countryData['name']}</strong> heeft reisadvies {$adviceBadgesHtml}
     </span>
-    <a href="{$countryData['full_url']}" target="_blank" class="btn btn-success btn-xs float-right">Bekijk advies</a>
+    <span class="travel-advice btn btn-success btn-xs float-right" data-url="{$countryData['full_url']}">Bekijk advies</span>
     {$vilandoButton}
 </li>
 EOD;

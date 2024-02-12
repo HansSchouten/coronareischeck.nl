@@ -252,7 +252,7 @@ $availableOnVilando = [
                 <div class="modal-body">
                     <p></p>
                     <img src="" style="margin: 0 auto">
-                    <a href="" class="travel-advice btn btn-primary mt-3" target="_blank">Bekijk uitgebreid reisadvies</a>
+                    <span class="travel-advice btn btn-primary mt-3">Bekijk uitgebreid reisadvies</span>
                     <a href="https://www.vilando.nl/vakantiehuizen/<?= $countrySlug ?>" class="vilando-link btn btn-secondary mt-3 float-right" target="_blank" title="Vakantiehuis in <?= e($countryData['name']) ?> huren">
                         Bekijk bestemmingen in <?= e($countryData['name']) ?>
                     </a>
@@ -275,7 +275,7 @@ $availableOnVilando = [
                 <div class="modal-body">
                     <p></p>
                     <img src="" style="margin: 0 auto">
-                    <a href="" class="btn btn-primary mt-3" target="_blank">Bekijk uitgebreid reisadvies</a>
+                    <span class="travel-advice btn btn-primary mt-3">Bekijk uitgebreid reisadvies</span>
                 </div>
             </div>
         </div>
@@ -342,7 +342,7 @@ $availableOnVilando = [
                     $modal.find(".modal-title").text(countryData['name']);
                     $modal.find("p").html(countryData['name'] + " heeft momenteel reisadvies code " + getColorCodeNames(countryData) + ".");
                     $modal.find("img").attr('src', '').attr('src', countryData['advice_image_url']);
-                    $modal.find("a.travel-advice").attr('href', countryData['full_url']);
+                    $modal.find(".travel-advice").data('url', countryData['full_url'], '_blank');
                     $modal.modal('show');
                 }
             });
@@ -392,6 +392,10 @@ $availableOnVilando = [
                 $("#map-canvas").html("");
                 drawVisualization();
             }, 200);
+        });
+
+        $("body").on("click", ".travel-advice", function() {
+            window.open($(this).data('url'), '_blank');
         });
     </script>
 </body>
